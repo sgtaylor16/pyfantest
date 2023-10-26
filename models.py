@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session, DeclarativeBase
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///testdb.db"
 
@@ -46,3 +46,13 @@ class InstroPurpose(Base):
     
     instro:Mapped[Instro] = relationship(back_populates="instropurpose")
     purpose:Mapped[Purpose] = relationship(back_populates="instropurpose")
+    
+""" 
+class Setup(Base):
+    __tablename__ = "Setup"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    inlet:Mapped[str] = mapped_column(String(30))
+    ct:Mapped[str] = mapped_column(String(30))
+    
+class Map(Base):
+    __tablename__="" """
