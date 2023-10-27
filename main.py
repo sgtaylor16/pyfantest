@@ -50,7 +50,8 @@ app = Starlette()
 
 schema = Schema(query=Query)
 
-app.mount("/", GraphQLApp(schema, on_get=make_graphiql_handler()))
+#app.mount("/", GraphQLApp(schema, on_get=make_graphiql_handler()))
+app.mount("/",GraphQLApp(schema))
     
 
 
